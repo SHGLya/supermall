@@ -28,8 +28,8 @@
 
 <script>
 //如果文件时通过import引入，可以直接使用别名
-import TarBar from 'components/commom/tabbar/TabBar'
-import TabBarItem from "components/commom/tabbar/TabBarItem";
+import TarBar from 'components/common/tabbar/TabBar'
+import TabBarItem from "components/common/tabbar/TabBarItem";
 
 export default {
   name: "MainTabBar",

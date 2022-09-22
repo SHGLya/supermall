@@ -5,8 +5,8 @@
       <slot></slot>
     </div>
     <!--小原点指示器-->
-    <!--<slot name="indicator">-->
-    <!--</slot>-->
+    <slot name="indicator">
+    </slot>
     <div class="indicator">
       <slot name="indicator" v-if="showIndicator && slideCount>1">
         <!--如果父组件没有传入子组件需要的插槽内容，就直接显示默认的内容，默认内容如下-->
@@ -59,7 +59,7 @@ export default {
       this.handleDom();
 
       // 2.开启定时器
-      //this.startTimer();
+      this.startTimer();
     }, 100)
   },
   methods: {
@@ -111,7 +111,7 @@ export default {
         }
 
         // 2.结束移动后的回调，子组件给父组件传递消息使用emit
-        //this.$emit('transitionEnd', this.currentIndex-1);
+        this.$emit('transitionEnd', this.currentIndex-1);
       }, this.animDuration)
     },
 
@@ -137,8 +137,8 @@ export default {
 
       // 2.保存个数
       this.slideCount = slidesEls.length;
-
-      // 3.如果大于1个, 那么在前后分别添加一个slide，这样才能实现循环的效果。一个就没必要轮播了
+ 
+      // 3.如果大于1个, 那么在前后分别添加一个slide，这样才能实现循环的效果。一个就没必要轮播了.
       if (this.slideCount > 1) {
         let cloneFirst = slidesEls[0].cloneNode(true);
         let cloneLast = slidesEls[this.slideCount - 1].cloneNode(true);
